@@ -6,7 +6,7 @@ import requests
 import torch
 from whisperx import load_align_model, align
 from whisperx.diarize import DiarizationPipeline, assign_word_speakers
-import help.amazon_data as had
+# import help.amazon_data as had
 import loguru
 
 lg = loguru.logger
@@ -90,7 +90,7 @@ def make_data(result, start_time):
         data['Speaker'] = segment["speaker"]
         data['Content'] = segment["text"]
         data_list.append(data)
-    had.insert_batch_data(data_list, 'speaker_diarization')
+    # had.insert_batch_data(data_list, 'speaker_diarization')
 
 
 if __name__ == '__main__':
